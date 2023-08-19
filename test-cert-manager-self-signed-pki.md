@@ -1,6 +1,7 @@
 Once the cluster is fully deployed do the following.
+<br><br>
 
-Create a self signed certificate ClusterIssuer
+##### Create a self signed certificate ClusterIssuer
 
 More info on the difference between ClusterIssuer and Issuer you can find on the [cert-manager official documentation](https://cert-manager.io/docs/concepts/issuer/).
 
@@ -19,7 +20,7 @@ $ kubectl apply -f cert-manager-ClusterIssuer.yml
 ```
 <br>
 
-Create a test namespace. I named it `nginx-test-deployments`
+##### Create a test namespace. I named it `nginx-test-deployments`
 ```bash
 $ cat >nginx-https-test-deployments-namespace.yml <<EOF
 apiVersion: v1
@@ -32,7 +33,7 @@ $ kubectl apply -f nginx-https-test-deployments-namespace.yml
 ```
 <br>
 
-Create the certificate (self-signed) which will be used by our CA (Certificate Authority)
+##### Create the certificate (self-signed) which will be used by our CA (Certificate Authority)
 ```bash
 $ cat >nginx-test-deployments-ca-cert.yml <<EOF
 apiVersion: cert-manager.io/v1
@@ -65,7 +66,8 @@ $ kubectl apply -f nginx-test-deployments-ca-cert.yml
 ```
 <br>
 
-Create the CA issuer. This will issue certificates for the `nginx-test-deployments` namespace only.
+##### Create the CA issuer.
+This will issue certificates for the `nginx-test-deployments` namespace only.
 ```bash
 $ cat >nginx-test-deployments-ca-issuer.yml <<EOF
 apiVersion: cert-manager.io/v1
@@ -82,7 +84,7 @@ $ kubectl apply -f nginx-test-deployments-ca-issuer.yml
 ```
 <br>
 
-Create the certificate which will be used by our `ingress-nginx` deployment.
+##### Create the certificate which will be used by our `ingress-nginx` deployment.
 ```bash
 $ cat >nginx-first-https-deployment-cert.yml <<EOF
 apiVersion: cert-manager.io/v1
@@ -129,7 +131,7 @@ $ kubectl apply -f nginx-first-https-deployment-cert.yml
 ```
 <br>
 
-Create an example deployment with `ingress-nginx`:
+##### Create an example deployment with `ingress-nginx`:
 ```bash
 $ cat >nginx-first-https-deployment.yml <<EOF
 apiVersion: apps/v1
