@@ -167,14 +167,14 @@ $ kubectl apply -f nginx-third-deployment.yml
 Each of the deployments should have a service of type `LoadBalancer` under the `nginx-test-deployments` namespace with a `Loadbalancer` Ingress field populated by an IP from the IP range configured previously. For example:
 ```bash
 $ kubectl get services -n nginx-test-deployments
-NAME                              TYPE           CLUSTER-IP      EXTERNAL-IP    PORT(S)        AGE
-nginx-first-deployment-service    LoadBalancer   10.43.36.169    172.16.76.1    80:30484/TCP   49m
-nginx-second-deployment-service   LoadBalancer   10.43.85.177    172.16.76.2    80:30553/TCP   47m
-nginx-third-deployment-service    LoadBalancer   10.43.183.195   172.16.76.3    80:32657/TCP   39m
+NAME                              TYPE           CLUSTER-IP      EXTERNAL-IP     PORT(S)        AGE
+nginx-first-deployment-service    LoadBalancer   10.43.36.169    172.16.0.193    80:30484/TCP   49m
+nginx-second-deployment-service   LoadBalancer   10.43.85.177    172.16.0.194    80:30553/TCP   47m
+nginx-third-deployment-service    LoadBalancer   10.43.183.195   172.16.0.195    80:32657/TCP   39m
 ```
 
 From the browser or with `curl` confirm that you can reach the IPs, for example: 
 ```bash
-$ curl http://172.16.76.1
+$ curl http://172.16.0.193
 This is the FIRST nginx deployment
 ```
