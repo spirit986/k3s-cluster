@@ -525,6 +525,8 @@ metadata:
 spec:
   addresses:
   - 172.16.0.192/26
+  avoidBuggyIPs: false
+  autoAssign: true
 
 ---
 apiVersion: metallb.io/v1beta1
