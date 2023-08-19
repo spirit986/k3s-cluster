@@ -8,7 +8,7 @@ During this trial we are going to restore a Kubernetes cluster in a complete Shi
 ##### *"If you ever drop your keys into a river of molten lava, let 'em go, because man, they're gone."* <br> &nbsp;&nbsp;&nbsp;&nbsp;- Jack Handey, American humorist
 <br>
 
-However because we are all working remotely, you suddenly realize that you have a partial cluster backup on your laptop, because you've been poking around just a few days ago. That is, we suddenly you realize that you have the most critical components to restore the `etcd` cluster database configuration and rebuild the cluster, that is, you have the `NODE-TOKEN` the `kube-config.yml` file and one `etcd` database snapshot.
+However because we are all working remotely, you suddenly realize that you have a partial cluster backup on your laptop, because you've been poking around just a few days ago. That is, suddenly you realize that you have the most critical components to restore the `etcd` cluster database configuration and rebuild the cluster, that is, you have the `NODE-TOKEN` the `kube-config.yml` file and one `etcd` database snapshot.
 
 Now let's begin with our little adventure...
 <br><br>
